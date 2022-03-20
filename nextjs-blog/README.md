@@ -1,1 +1,1 @@
-This is a starter template for [Learn Next.js](https://nextjs.org/learn). jj
+Project to test out NextJs features as oppose to Vanilla React. Gary.
