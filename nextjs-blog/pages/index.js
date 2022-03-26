@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Link from 'next/link'
+import Layout from '../components/layout'
 import { getSortedPostsData } from '../lib/posts'
 
 export async function getStaticProps() {
@@ -11,9 +12,9 @@ export async function getStaticProps() {
   }
 }
 
-export default function Home() {
+export default function Home({ allPostsData }) {
   return (
-    <div className="container">
+        <div className="container">
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
@@ -26,6 +27,21 @@ export default function Home() {
     <a>this page!</a>
   </Link>
 </h1>
+<section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
+        <h2 className={utilStyles.headingLg}>Blog</h2>
+        <ul className={utilStyles.list}>
+          {allPostsData.map(({ id, date, title }) => (
+            <li className={utilStyles.listItem} key={id}>
+              {title}
+              <br />
+              {id}
+              <br />
+              {date}
+            </li>
+          ))}
+        </ul>
+      </section>
+   
 
         <p className="description">
           Get started by editing <code>pages/index.js</code>
@@ -72,6 +88,8 @@ export default function Home() {
           <img src="/vercel.svg" alt="Vercel" className="logo" />
         </a>
       </footer>
+
+
 
       <style jsx>{`
         .container {
