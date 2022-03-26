@@ -1,1 +1,1 @@
-Project to test out NextJs features as oppose to Vanilla React. Gary.
+Project to test out NextJs features as oppose to Vanilla React. GS.
